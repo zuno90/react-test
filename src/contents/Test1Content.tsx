@@ -10,8 +10,8 @@ const Test1Content: React.FC = () => {
     try {
       const res = await signInWithPopup(auth, provider);
       if (!res) throw Error("Can not log in with Google!");
-      const { email, displayName, photoURL, accessToken } = res.user;
-      setLoggedUser({ email, displayName, avatar: photoURL, accessToken });
+      const { email, displayName, photoURL } = res.user;
+      setLoggedUser({ email, displayName, avatar: photoURL });
     } catch (error) {
       console.error(error);
     }

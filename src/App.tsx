@@ -2,11 +2,16 @@ import React from "react";
 import Loader from "./components/Loader";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import Protected from "./components/Protected";
+import useRestrictCountry from "./hooks/useRestrictCountry";
 const Test1 = React.lazy(() => import("./pages/Test1"));
 const Test2 = React.lazy(() => import("./pages/Test2"));
 
 const App: React.FC = () => {
-  return (
+  const isBlocked = useRestrictCountry();
+
+  return isBlocked ? (
+    window.alert("Dapp is not support your location!")
+  ) : (
     <main className="container-md">
       <HashRouter>
         <Routes>

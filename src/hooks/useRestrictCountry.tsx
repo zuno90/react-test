@@ -1,6 +1,6 @@
 import React from "react";
 
-const blackListCoutries = ["JP", "VN"];
+const blackListCoutries = ["JP"];
 
 const useRestrictCountry = () => {
   const [code, setCode] = React.useState<string>("");

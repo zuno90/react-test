@@ -6,7 +6,7 @@ import useRestrictCountry from "./hooks/useRestrictCountry";
 const Test1 = React.lazy(() => import("./pages/Test1"));
 const Test2 = React.lazy(() => import("./pages/Test2"));
 
-const App: React.FC = () => {
+const App = () => {
   const isBlocked = useRestrictCountry();
 
   return isBlocked ? (
